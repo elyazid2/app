@@ -30,6 +30,13 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Patch Gradle versions
+        working-directory: extracted/habit-passport-project/android
+        run: |
+          sed -i "s/com.android.tools.build:gradle:8.7.2/com.android.tools.build:gradle:8.9.1/" build.gradle
+          sed -i "s/compileSdkVersion = 35/compileSdkVersion = 36/" variables.gradle
+          sed -i "s/targetSdkVersion = 35/targetSdkVersion = 36/" variables.gradle
+
       - name: Install dependencies
         working-directory: extracted/habit-passport-project
         run: npm ci
