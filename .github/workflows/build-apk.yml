@@ -29,6 +29,7 @@ jobs:
           sed -i 's/gradle:8.7.2/gradle:8.9.1/' build.gradle
           sed -i 's/compileSdkVersion = 35/compileSdkVersion = 36/' variables.gradle
           sed -i 's/targetSdkVersion = 35/targetSdkVersion = 36/' variables.gradle
+          sed -i 's/minSdkVersion = 23/minSdkVersion = 24/' variables.gradle
 
       - name: Install
         working-directory: src/habit-passport-project
